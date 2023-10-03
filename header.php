@@ -2,7 +2,7 @@
 
     <h1>Chess Event</h1>
     
-    <a>Se connecter</a>
-    <a>S'inscrire</a>
+    <a href="connexion.php">Se connecter</a>
+    <a href="inscription.php">S'inscrire</a>
 
 </header>
