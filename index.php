@@ -6,6 +6,6 @@
     <title>Accueil</title>
 </head>
 <body>
-    <h1>Lucas Dufonddetein</h1>
+    
 </body>
 </html>
