@@ -1,5 +1,5 @@
 <footer>
 
-    <a><button>politique de confidentialité</button></a>
+    <a>politique de confidentialité</a>
 
 </footer>
