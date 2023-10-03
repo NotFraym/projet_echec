@@ -1,5 +1,8 @@
 <header>
 
-    <h1>Test</h1>
+    <h1>Chess Event</h1>
     
+    <a><button>Se connecter</button></a>
+    <a><button>S'inscrire</button></a>
+
 </header>

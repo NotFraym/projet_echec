@@ -11,3 +11,5 @@
     
 </body>
 </html>
+<h2>Bienvenue sur Chess Event !</h2>
+<h3>Sur Chess Event, vous pouvez créer vos propres tournois d'échecs, avec vos propres règles !</h3>
