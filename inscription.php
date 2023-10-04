@@ -10,9 +10,11 @@
 
 <body>
 
+<?php include 'header.php'; ?>
+
 <main>
 
-    <h1>Inscription</h1>
+    <h2>Inscription</h2>
 
     <form action="traitement_inscription.php" method="POST">
 
@@ -32,9 +34,7 @@
         </form>
 
     </main>
-
-<?php include 'header.php'; ?>
-    
+   
 <?php include 'footer.php'; ?>
 
 </body>

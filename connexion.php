@@ -14,7 +14,7 @@
     
 <main>
 
-    <h1>Connexion</h1>
+    <h2>Connexion</h2>
 
     <form action="traitement_inscription.php" method="POST">
 
