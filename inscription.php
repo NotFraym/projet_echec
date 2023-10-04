@@ -27,7 +27,7 @@
         <label for="confirm_mdp">Confirmez le mot de passe :</label>
         <input type="password" id="confirm_mdp" name="confirm_mdp" required><br><br>
             
-        </select><br><br>
+        </select><br>
             
         <input type="submit" value="S'inscrire">
         
