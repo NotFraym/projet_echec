@@ -26,7 +26,7 @@
               
         </select><br><br>
             
-        <input type="submit" value="S'inscrire">
+        <input type="submit" value="Se connecter">
 
         </form>
 
