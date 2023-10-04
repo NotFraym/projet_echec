@@ -9,11 +9,7 @@
 <body>
     <?php include 'header.php'; ?>
 
-    <div id="messageDiv">
-        <!-- Les messages seront affichés ici -->
-    </div>
-
-    <form id="inscriptionForm" method="POST">
+    <form id="inscription" method="POST" action="traitement_inscription.php">
         <label for="nom">Nom d'utilisateur :</label>
         <input type="text" id="nom" name="nom" required>
         <br>
@@ -27,4 +23,5 @@
     </form>
 
     <?php include 'footer.php'; ?>
-
+</body>
+</html>
