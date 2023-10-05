@@ -1,5 +1,12 @@
 <?php
+
+include 'header.php';
+
 include "session_start.php";
+
+
+
+$erreur_message = "";
 
 // Vérifiez si le formulaire de connexion a été soumis
 if (isset($_POST['ok'])) {
@@ -45,16 +52,14 @@ if (isset($_POST['ok'])) {
 
             // Redirigez en fonction du statut
             
-                header('Location: index.php'); // Ou toute autre page après la connexion réussie
-                exit();
+            header('Location: index.php'); // Ou toute autre page après la connexion réussie
+            exit();
             
         } else {
-            header('Location: connexion.php?erreur=mdp');
-            exit();
+            echo "Mot de passe incorrect. Veuillez réessayer.";
         }
     } else {
-        header('Location: connexion.php?erreur=utilisateur');
-        exit();
+        echo "Nom d'utilisateur incorrect. Veuillez réessayer.";
     }
 
     // Fermez la connexion et la requête $stmt
@@ -64,4 +69,6 @@ if (isset($_POST['ok'])) {
     header('Location: connexion.php');
     exit();
 }
+
+include 'footer.php';
 ?>

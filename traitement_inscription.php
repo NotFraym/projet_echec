@@ -1,4 +1,5 @@
 <?php
+include 'header.php';
 include 'session_start.php';
 include 'config.php';
 
@@ -21,8 +22,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $user = $_POST["nom"]; 
     $mdp = $_POST["mdp"];
     $c_mdp = $_POST["c_mdp"];
-
-    include 'header.php';
 
     // Vérifier que le nom d'utilisateur n'existe pas déjà
 
@@ -60,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $stmt->bind_param("sss", $user, $mdp_hash, $statut);
 
                 if ($stmt->execute()) {
-                    echo "Inscription réussie !";
+                    echo "Inscription réussie ! Vous pouvez maintenant vous connecter !";
                 } else {
                     echo "Erreur lors de l'inscription : " . $stmt->error;
                 }
