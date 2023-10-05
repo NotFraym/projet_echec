@@ -1,22 +1,11 @@
-<?php
-include "session_start.php";
-?>
-
+<?php include "session_start.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Politique de confidentialité</title>
-
-</head>
-
-<body>
-
-<?php include 'header.php'; ?>
-    
-<?php include 'footer.php'; ?>
-
-</body>
+    <head>
+        <?php include "include/head.php"?>
+    </head>
+    <body>
+    <?php include 'include/header.php'; ?>
+    <?php include 'include/footer.php'; ?>
+    </body>
 </html>

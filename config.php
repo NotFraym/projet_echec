@@ -1,5 +1,5 @@
 <?php
-$shost = 'localhost';
+$shost = '127.0.0.1';
 $user = 'root';
 $pass = '';
 $dbname = 'chessevent';
