@@ -17,8 +17,8 @@ if (isset($_POST['ok'])) {
         die("Erreur de connexion à la base de données : " . $mysqli->connect_error);
     }
 
-    // Préparez une requête pour obtenir le hash du mot de passe de l'utilisateur
-    $query = "SELECT mdp FROM utilisateur WHERE user = ?";
+    // Préparez une requête pour obtenir le hash du mot de passe et le statut de l'utilisateur
+    $query = "SELECT mdp, statut FROM utilisateur WHERE user = ?";
     $stmt = $mysqli->prepare($query);
 
     // Lier le nom d'utilisateur au paramètre de la requête
@@ -27,45 +27,42 @@ if (isset($_POST['ok'])) {
     // Exécutez la requête
     $stmt->execute();
 
-    // Lier le résultat de la requête à une variable
-    $stmt->bind_result($mdp_hash);
+    // Lier le résultat de la requête à des variables
+    $stmt->bind_result($mdp_hash, $user_statut);
 
     // Récupérez le résultat de la requête
     if ($stmt->fetch()) {
-        // Hasher le mot de passe entré par l'utilisateur en SHA-256
         $mdp_entre_hash = hash('sha256', $mdp_entre);
 
-        // Vérifiez si le hash du mot de passe entré correspond au hash enregistré dans la base de données
         if ($mdp_entre_hash === $mdp_hash) {
             // Démarrer la session
             if (session_status() == PHP_SESSION_NONE) {
                 session_start();
             }
-            
 
-            // Stockez le nom d'utilisateur dans la session
+            // Stockez le nom d'utilisateur et le statut dans la session
             $_SESSION['user_nom'] = $nom_utilisateur;
+            $_SESSION['user_statut'] = $user_statut;
 
-            // Redirigez vers la page d'accueil ou une autre page après la connexion réussie
-            header('Location: index.php'); // Remplacez par la page d'accueil souhaitée
-            exit();
+            // Redirigez en fonction du statut
+            
+                header('Location: index.php'); // Ou toute autre page après la connexion réussie
+                exit();
+            
         } else {
-            include 'header.php';
-            echo "Mot de passe incorrect.";
-            include 'footer.php';
+            header('Location: connexion.php?erreur=mdp');
+            exit();
         }
     } else {
-        include 'header.php';
-        echo "Nom d'utilisateur inexistant.";
-        include 'footer.php';
+        header('Location: connexion.php?erreur=utilisateur');
+        exit();
     }
 
     // Fermez la connexion et la requête $stmt
     $stmt->close();
     $mysqli->close();
 } else {
-    // Redirigez vers la page de connexion si le formulaire n'a pas été soumis
-    header('Location: connexion.php'); // Remplacez par la page de connexion
+    header('Location: connexion.php');
     exit();
 }
 ?>
