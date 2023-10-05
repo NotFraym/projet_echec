@@ -1,5 +1,10 @@
-<?php
-include "session_start.php";
+<?php include "session_start.php"; ?>
+
+<!DOCTYPE html>
+<html>
+
+
+<?php 
 include 'config.php';
 
 include 'header.php';
@@ -51,3 +56,4 @@ if (isset($_SESSION['user_nom'])) {
 
 include 'footer.php';
 ?>
+</html>

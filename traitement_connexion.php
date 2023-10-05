@@ -1,11 +1,11 @@
-<?php
+<?php include "session_start.php"; ?>
 
+<!DOCTYPE html>
+<html>
+
+
+<?php 
 include 'header.php';
-
-include "session_start.php";
-
-
-
 $erreur_message = "";
 
 // Vérifiez si le formulaire de connexion a été soumis
@@ -72,3 +72,4 @@ if (isset($_POST['ok'])) {
 
 include 'footer.php';
 ?>
+</html>

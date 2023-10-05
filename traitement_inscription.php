@@ -1,6 +1,9 @@
+<?php include 'session_start.php';?>
+<!DOCTYPE html>
+<html>
 <?php
-include 'header.php';
-include 'session_start.php';
+include 'include/head.php';
+include 'include/header.php';
 include 'config.php';
 
 // Établir une connexion à la base de données
@@ -67,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
     }
 
-    include 'footer.php';
+    include 'include/footer.php';
 }
 
 // Fermer la connexion à la base de données
@@ -75,3 +78,5 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 $stmt->close();
 $mysqli->close();
 ?>
+</html>
+
