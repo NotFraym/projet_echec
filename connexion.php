@@ -9,7 +9,7 @@ include "session_start.php";
     <meta charset="UTF-8">
     <link rel="stylesheet" href="inscription_connexion.css" media="screen" type="text/css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connexion -  ChessEvent</title>
+    <title>Connexion - ChessEvent</title>
 
 </head>
 
