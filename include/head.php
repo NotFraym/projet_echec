@@ -4,6 +4,7 @@
 <title>Chess event</title>
 <link rel="stylesheet" href="/css/index.css">
 <link rel="stylesheet" href="/css/header.css">
+<link rel="stylesheet" href="/css/body.css">
 <link rel="stylesheet" href="/css/footer.css">
 <!--Police d'affichage Google-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
