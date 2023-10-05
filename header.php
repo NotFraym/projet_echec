@@ -18,6 +18,7 @@ if (session_status() == PHP_SESSION_NONE) {
         }
         
         // Lien vers la page "profil.php"
+        echo '<a href="mes_tournois.php">Mes tournois</a>';
         echo '<a href="profil.php">Profil</a>';
 
         echo '<a href="deconnexion.php">Déconnexion</a>';
