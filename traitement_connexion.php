@@ -1,6 +1,5 @@
 <?php
-// Assurez-vous d'avoir démarré la session
-session_start();
+include "session_start.php";
 
 // Vérifiez si le formulaire de connexion a été soumis
 if (isset($_POST['ok'])) {

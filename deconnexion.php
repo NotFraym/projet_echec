@@ -1,10 +1,5 @@
 <?php
-// Démarrez ou reprenez la session
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
-
-
+include "session_start.php";
 // Détruisez toutes les données de session
 session_destroy();
 

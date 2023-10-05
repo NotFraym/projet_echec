@@ -1,9 +1,3 @@
-<?php
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
-?>
-
 <header>
     <a href="index.php"><h1>Chess Event</h1></a>
 

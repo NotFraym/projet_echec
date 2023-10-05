@@ -1,5 +1,5 @@
 <?php
-
+include 'session_start.php';
 include 'config.php';
 
 // Établir une connexion à la base de données
