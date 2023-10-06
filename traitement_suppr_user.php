@@ -6,8 +6,8 @@
 
 <?php 
 include 'config.php';
-
-include 'header.php';
+include 'include/head.php';
+include 'include/header.php';
 
 // Vérifiez si l'utilisateur est connecté
 if (isset($_SESSION['user_nom'])) {
@@ -54,6 +54,6 @@ if (isset($_SESSION['user_nom'])) {
     exit();
 }
 
-include 'footer.php';
+include 'include/footer.php';
 ?>
 </html>

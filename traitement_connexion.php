@@ -5,8 +5,8 @@
 
 
 <?php 
-include 'header.php';
-$erreur_message = "";
+include 'include/head.php';
+include 'include/header.php';
 
 // Vérifiez si le formulaire de connexion a été soumis
 if (isset($_POST['ok'])) {
@@ -70,6 +70,6 @@ if (isset($_POST['ok'])) {
     exit();
 }
 
-include 'footer.php';
+include 'include/footer.php';
 ?>
 </html>
