@@ -36,13 +36,13 @@ if (isset($_SESSION['user_nom'])) {
         // Détruisez la session pour déconnecter l'utilisateur
         session_destroy();
 
-        include 'header.php';
+        
         
         echo "Votre compte a bien été supprimé.";
     } else {
         // Gestion de l'erreur de suppression
 
-        include 'header.php';
+        
         echo "Une erreur est survenue lors de la suppression de votre compte";
     }
 
