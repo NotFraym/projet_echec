@@ -13,10 +13,8 @@ if (isset($_SESSION['user_statut']) && $_SESSION['user_statut'] == 'admin') {
     <body class="dark-theme">
         <?php include 'include/header.php'; ?>
 
-        <h2>Page d'administration</h2>
-        <a href="../gestion_utilisateur.php">Gestion des utilisateurs</a>
-        <br>
-        <a href="../gestion_quizz.php">Gestion des questions</a>
+        <h2>Gestion des questions</h2>
+
         <?php include 'include/footer.php'; ?>
     </body>
     </html>
