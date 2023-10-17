@@ -1,5 +1,5 @@
 <header>
-    <h1><a href="../index.php">Chess Event</a></h1>
+    <h1><a href="../index.php">Chess Quizz</a></h1>
     <div>
         <?php
         if (isset($_SESSION['user_nom'])) {
@@ -11,7 +11,6 @@
                 echo '<a href="../administration.php">Administration</a>';
             }
             // Lien vers la page "profil.php"
-            echo '<a href="../mes_tournois.php">Mes tournois</a>';
             echo '<a href="../profil.php">Profil</a>';
 
             echo '<a href="../deconnexion.php">Déconnexion</a>';

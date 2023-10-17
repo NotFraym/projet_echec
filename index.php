@@ -6,8 +6,8 @@
     </head>
     <body class="dark-theme">
         <?php include 'include/header.php'; ?>
-        <h2>Bienvenue sur Chess Event !</h2>
-        <h3>Sur Chess Event, vous pouvez créer vos propres tournois d'échecs, avec vos propres règles !</h3>
+        <h2>Bienvenue sur ChessQuizz !</h2>
+        <h3>Sur ChessQuizz, venez tester vos connaissances du monde des échecs !</h3>
         <?php include 'include/footer.php'; ?>
     </body>
 </html>
