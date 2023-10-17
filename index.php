@@ -12,8 +12,8 @@
         if (isset($_SESSION['user_nom'])) {
             echo '<h2>Choisissez une catégorie de jeu :</h2>';
             echo '<ul>';
-            echo '<li><a href="quiz_ouverture.php">Ouvertures</a></li>';
-            echo '<li><a href="quiz_joueurs.php">Joueurs célèbres</a></li>';
+            echo '<li><a href="../quiz_ouverture.php">Ouvertures</a></li>';
+            echo '<li><a href="../quiz_joueur.php">Joueurs célèbres</a></li>';
             echo '</ul>';
         } else {
             echo '<h3>Afin de commencer, veuillez vous connecter, ou créer un compte !</h3>';

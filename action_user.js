@@ -8,3 +8,4 @@ function supprimerCompte() {
     alert("Annulation de la suppression du compte.");
   }
 }
+
