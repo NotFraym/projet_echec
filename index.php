@@ -10,7 +10,6 @@
         <h3>Sur ChessQuizz, venez tester vos connaissances du monde des échecs !</h3>
         <?php
         if (isset($_SESSION['user_nom'])) {
-            echo '<h3>Bienvenue, ' . htmlspecialchars($_SESSION['user_nom']) . '</h3>';
             echo '<h2>Choisissez une catégorie de quiz :</h2>';
             echo '<ul>';
             echo '<li><a href="quiz_ouverture.php">Ouvertures</a></li>';
