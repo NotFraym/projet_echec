@@ -3,7 +3,6 @@
 <!DOCTYPE html>
 <html>
 
-
 <?php 
 include 'include/head.php';
 include 'include/header.php';
@@ -33,17 +32,20 @@ if (isset($_SESSION['user_statut']) && $_SESSION['user_statut'] == 'admin') {
         } else {
             if (isset($_FILES['image_question']) && $_FILES['image_question']['error'] === UPLOAD_ERR_OK) {
                 $upload_dir = 'image/question/';
-                $image_name = $upload_dir . $_FILES['image_question']['name'];
+                $extension = pathinfo($_FILES['image_question']['name'], PATHINFO_EXTENSION);
 
                 // Vérification de l'extension de l'image et de la taille
                 $image_info = getimagesize($_FILES['image_question']['tmp_name']);
                 if ($image_info === false || $image_info[0] !== 500 || $image_info[1] !== 500) {
                     echo "L'image doit avoir une dimension de 500x500 pixels.";
                 } else {
-                    $extension = pathinfo($_FILES['image_question']['name'], PATHINFO_EXTENSION);
                     if ($extension !== 'jpg' && $extension !== 'png') {
                         echo "Seuls les fichiers JPG et PNG sont acceptés.";
                     } else {
+                        // Générer un nom de fichier unique basé sur la bonne réponse hachée
+                        $hashed_bonne_reponse = hash('sha256', $bonne_reponse);
+                        $image_name = $upload_dir . $hashed_bonne_reponse . '.' . $extension;
+
                         // Déplacer le fichier vers le répertoire des images
                         if (move_uploaded_file($_FILES['image_question']['tmp_name'], $image_name)) {
                             // Insérer la question dans la base de données
@@ -75,5 +77,4 @@ if (isset($_SESSION['user_statut']) && $_SESSION['user_statut'] == 'admin') {
     exit();
 }
 include 'include/footer.php';
-
 ?>
