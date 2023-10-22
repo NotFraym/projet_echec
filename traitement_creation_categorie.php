@@ -3,7 +3,6 @@
 <!DOCTYPE html>
 <html>
 
-
 <?php 
 include 'include/head.php';
 include 'include/header.php';
@@ -11,12 +10,13 @@ include 'include/header.php';
 if (isset($_SESSION['user_statut']) && $_SESSION['user_statut'] == 'admin') {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Vérifier si les données ont été soumises
-        if (isset($_POST['nom_categorie']) && isset($_FILES['image_categorie'])) {
+        if (isset($_POST['nom_categorie']) && isset($_POST['intitule_categorie']) && isset($_FILES['image_categorie'])) {
             $nom_categorie = $_POST['nom_categorie'];
+            $intitule_categorie = $_POST['intitule_categorie'];
             $image_categorie = $_FILES['image_categorie'];
 
             // Valider et traiter les données
-            if (!empty($nom_categorie) && $image_categorie['error'] === UPLOAD_ERR_OK) {
+            if (!empty($nom_categorie) && !empty($intitule_categorie) && $image_categorie['error'] === UPLOAD_ERR_OK) {
                 // Vérifier si la catégorie existe déjà
                 include 'config.php';
                 $conn = new mysqli($shost, $user, $pass, $dbname);
@@ -48,9 +48,9 @@ if (isset($_SESSION['user_statut']) && $_SESSION['user_statut'] == 'admin') {
 
                             if (move_uploaded_file($image_categorie['tmp_name'], $nouveau_nom_fichier)) {
                                 // Insérer les données de la catégorie dans la base de données
-                                $insert_query = "INSERT INTO categorie (nom_categorie, nom_fichier) VALUES (?, ?)";
+                                $insert_query = "INSERT INTO categorie (nom_categorie, intitule, nom_fichier) VALUES (?, ?, ?)";
                                 $insert_stmt = $conn->prepare($insert_query);
-                                $insert_stmt->bind_param("ss", $nom_categorie, $nouveau_nom_fichier);
+                                $insert_stmt->bind_param("sss", $nom_categorie, $intitule_categorie, $nouveau_nom_fichier);
 
                                 if ($insert_stmt->execute()) {
                                     echo "Catégorie créée avec succès.";

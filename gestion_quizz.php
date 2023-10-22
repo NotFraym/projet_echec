@@ -18,6 +18,8 @@
     <form action="traitement_creation_categorie.php" method="post" enctype="multipart/form-data">
         <label for="nom_categorie">Nom de la catégorie :</label>
         <input type="text" id="nom_categorie" name="nom_categorie" required>
+        <label for="intitule_categorie">Intitulé de la catégorie :</label>
+        <input type="text" id="intitule_categorie" name="intitule_categorie" required>
         <label for="image_categorie">Image de la catégorie : (500px/500px uniquement)</label>
         <input type="file" id="image_categorie" name="image_categorie" accept="image/*" required>
         <button type="submit">Créer la catégorie</button>
@@ -29,6 +31,7 @@
         <tr>
             <th>ID</th>
             <th>Nom de la catégorie</th>
+            <th>Intitulé de la catégorie</th>
             <th>Image de la catégorie</th>
             <th>Actions</th>
         </tr>
@@ -40,13 +43,14 @@
             die("Erreur de connexion à la base de données : " . $conn->connect_error);
         }
 
-        $query = "SELECT id_categorie, nom_categorie, nom_fichier FROM categorie";
+        $query = "SELECT id_categorie, nom_categorie, intitule, nom_fichier FROM categorie";
         $result = $conn->query($query);
 
         while ($row = $result->fetch_assoc()) {
             echo "<tr>";
             echo "<td>" . $row["id_categorie"] . "</td>";
             echo "<td>" . $row["nom_categorie"] . "</td>";
+            echo "<td>" . $row["intitule"] . "</td>";
             // Afficher l'image à 100x100 pixels
             echo "<td><img src='" . $row["nom_fichier"] . "' alt='" . $row["nom_categorie"] . "' width='100' height='100'></td>";
             echo "<td>";
@@ -63,8 +67,8 @@
     <h2>Paramètres des questions</h2>
     <h3>Ajout d'une question :</h3>
 
- <!-- Formulaire d'ajout de question -->
- <form action="traitement_ajout_question.php" method="post" enctype="multipart/form-data">
+    <!-- Formulaire d'ajout de question -->
+    <form action="traitement_ajout_question.php" method="post" enctype="multipart/form-data">
         <label for="nom_categorie">Catégorie :</label>
         <select name="nom_categorie" id="nom_categorie">
             <?php
@@ -189,7 +193,6 @@
     </table>
 
     <br><br>
-  
 
     <?php include 'include/footer.php'; ?>
 </body>
